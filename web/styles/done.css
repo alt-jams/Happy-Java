@@ -1,0 +1,94 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13/12/2020, 13:52:54
+    Author     : Jamilly
+*/
+
+#page-created-orphanage{
+    width: 100vw;
+    height: 100vh;
+    background: #37C77F;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+#page-created-orphanage .content{
+    position: absolute;
+
+    width: 100%;
+    max-width: 1100px;
+
+    height: 100%;
+    max-height: 600px;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    background: url('../images/done.svg') no-repeat 85% center ;
+    background-size: 35%;
+
+}
+
+#page-created-orphanage .content main {
+    margin-left: 50px;
+}
+
+#page-created-orphanage .content main h1 {
+    max-width: 400px;
+    font-size: 76px;
+    font-weight: 900;
+    line-height: 70px;
+    text-align: center;
+    position: relative;
+    top: 50%;
+}
+
+#page-created-orphanage .content main p {
+    max-width: 400px;
+    margin-top: 40px;
+    font-size: 24px;
+    line-height: 34px;
+    text-align: center;
+    position: relative;
+    top: 50%;
+}
+
+.content .back-to-map{
+    height: 64px;
+    width: 240px;
+    background: #31B272;
+    border-radius: 20px;
+    margin-top: 70px;
+
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 12%;
+
+    color: white;  
+}
+
+.content .back-to-map:hover{
+    background: #3BD689;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+

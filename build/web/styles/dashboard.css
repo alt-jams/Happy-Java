@@ -1,0 +1,157 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 30/12/2020, 18:31:36
+    Author     : Jamilly
+*/
+#dashboard-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+#dashboard-page main {
+  flex: 1;
+}
+
+.sidebar {
+    position: fixed;
+  
+    height: 100%;
+    padding: 32px 24px;
+    background: linear-gradient(329.54deg, #15B6D6 0%, #15D6D6 100%);
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+ }
+ 
+.sidebar img {
+    width: 48px;
+}
+
+.sidebar footer button, .menu button {
+    width: 48px;
+    height: 48px;
+  
+    border: 0;
+  
+    background: #12AFCB;
+    border-radius: 16px;
+    color: #ffffff;
+  
+    cursor: pointer;
+  
+    transition: background-color 0.2s;
+    outline: none;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar footer button:hover {
+    background: #17D6EB;
+}
+
+.top{
+    margin-left: 200px;
+    margin-right: 150px;
+    margin-top: 50px;
+    
+    border-bottom: 1px solid #D3E2E5;
+    padding-bottom: 15px;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.top h1{
+    color: #4D6F80;
+    font-size: 25px;      
+}
+
+.top p{
+    color: #8FA7B2;
+    font-size: 14px;
+    padding-top: 14px;
+}
+
+
+.listing{
+    margin-left: 180px;
+    margin-top: 40px;
+    margin-right: 100px;
+}
+
+.orphanage-block{
+    width: 440px;
+    height: 250px;
+    border-radius: 20px;
+    border: 1px solid #D3E2E5;
+    
+    background: #ffffff;
+    display: inline-block;
+    margin-left: 20px;
+    margin-top:20px;
+    
+    color: #4D6F80;
+}
+
+.orphanage-info{
+    padding-left: 10px;
+    padding-right: 10px; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.orphanage-info p{
+    padding-top:16px;
+}
+
+
+.edit-button1, .edit-button2{
+    font-size:16px; 
+    color:#15B6D6;
+    
+    margin-top: 10px;
+    border: 0;
+    border-radius: 14px;
+
+    background: #EBF2F5;
+    transition: background-color 0.2s;
+    
+    cursor: pointer;
+    outline: none;
+}
+
+.edit-button1{
+    padding: 11px 12px;
+}
+
+.edit-button2{
+     padding: 11px 14px;
+}
+
+.edit-button1:hover, .edit-button2:hover{
+    background: #dae1e4;
+}
+
+.map{
+    height: 190px;
+    background: #37C77F;
+    border-radius: 20px;
+    border: 1px solid #D3E2E5;
+}
+
+
+
+
+
+
+

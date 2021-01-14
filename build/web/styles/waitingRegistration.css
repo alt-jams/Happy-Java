@@ -1,0 +1,26 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 31/12/2020, 18:33:41
+    Author     : Jamilly
+*/
+.waiting{
+    background: #FFD666 !important; 
+    color: #0089A5 !important;   
+}
+
+.orphanages{
+    margin-bottom: 20px; 
+}
+
+
+.orphanages:hover{
+    background: #17D6EB;
+}
+
+.edit-button1{
+    padding: 11px 14px !important;
+}
