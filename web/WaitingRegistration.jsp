@@ -12,9 +12,8 @@
         <link rel="stylesheet" type="text/css" href="styles/global.css">
         <link rel="stylesheet" type="text/css" href="styles/dashboard.css">
         <link rel="stylesheet" type="text/css" href="styles/waitingRegistration.css">
-
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
         
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <title>JSP Page</title>
     </head>
     <body>
@@ -47,7 +46,9 @@
                 <div class="listing">
 
                     <div class="orphanage-block">
-                        <div class="map">mapa</div>
+                        <div class="map">
+                            <img src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-53.027,-24.1865,13.25,0/439x185?access_token=pk.eyJ1IjoiYWx0LWphbXMiLCJhIjoiY2tqeW1hZzF1MGV5dDJwcDRjcm4zMWpraiJ9.JQYR_VJ00YqNBVx37LHZ1g" alt="map"/>
+                        </div>
 
                         <div class="orphanage-info">
                             <p>Orphanage name</p>

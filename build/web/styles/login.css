@@ -80,7 +80,7 @@
     margin-right: auto;
 
     padding: 50px;
-    padding-top: 150px;
+    padding-top: 120px;
   
     overflow: hidden;
 }
@@ -128,7 +128,7 @@
 }
 
 .enter-button {
-    margin-top: 64px;
+    margin-top: 40px;
   
     width: 100%;
     height: 54px;
@@ -145,4 +145,11 @@
   
     transition: background-color 0.2s;
     outline: none;
+}
+.enter-button:hover{
+    background:  #3EE08F;
+}
+
+.error{
+    color: #ea3e3e !important;
 }

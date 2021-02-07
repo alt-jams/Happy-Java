@@ -13,5 +13,29 @@ public class Image {
     private int id;
     private Orphanage orphanage;
     private String path;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Orphanage getOrphanage() {
+        return orphanage;
+    }
+
+    public void setOrphanage(Orphanage orphanage) {
+        this.orphanage = orphanage;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
     
 }

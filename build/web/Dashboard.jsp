@@ -12,8 +12,7 @@
         <link rel="stylesheet" type="text/css" href="styles/global.css">
         <link rel="stylesheet" type="text/css" href="styles/dashboard.css">
         <link rel="stylesheet" type="text/css" href="styles/registeredOrphanages.css">
-
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
         
         <title>JSP Page</title>
     </head>
@@ -47,7 +46,9 @@
                 <div class="listing">
 
                     <div class="orphanage-block">
-                        <div class="map">mapa</div>
+                        <div class="map">
+                            <img src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-53.027,-24.1865,13.25,0/439x185?access_token=pk.eyJ1IjoiYWx0LWphbXMiLCJhIjoiY2tqeW1hZzF1MGV5dDJwcDRjcm4zMWpraiJ9.JQYR_VJ00YqNBVx37LHZ1g" alt="map"/>
+                        </div>
 
                         <div class="orphanage-info">
                             <p>Orphanage name</p>
@@ -65,7 +66,7 @@
 
                     <div class="orphanage-block">
                         <div class="map">
-                            <img src="https://maps.googleapis.com/maps/api/staticmap?center=40.714%2c%20-73.998&zoom=12&size=400x400&key=AIzaSyBRcnBj9i5HnUFdiTgaaF8kq6Iz_GNNaXY" alt="mapa" />
+                            <img src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-53.027,-24.1865,13.25,0/439x185?access_token=pk.eyJ1IjoiYWx0LWphbXMiLCJhIjoiY2tqeW1hZzF1MGV5dDJwcDRjcm4zMWpraiJ9.JQYR_VJ00YqNBVx37LHZ1g" alt="map"/>
                         </div>
 
                         <div class="orphanage-info">

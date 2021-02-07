@@ -72,11 +72,23 @@ and open the template in the editor.
 }
 
 #map{
-  margin-bottom: 40px;
+  margin-bottom:15px;
   border: 1px solid #D3E2E5;
   border-radius:  20px;
 }
 
+.map-info{
+    background-color: #F5F8FA;
+    border: 1px solid #DDE3F0;
+    border-radius: 20px;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+}
+
+.map-info p{
+    color: #0089A5;
+    text-align: center;
+}
 
 .create-orphanage-form fieldset {
   border: 0;

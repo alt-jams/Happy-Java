@@ -11,8 +11,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="styles/global.css">
         <link rel="stylesheet" type="text/css" href="styles/newOrphanage.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
         
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script language="JavaScript" src="scripts/biblio.js"></script>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -34,9 +34,10 @@
                 <form action="NewOrphanage" method="post" class="create-orphanage-form">
                     <fieldset>
                         <legend>Dados</legend>
-
-                        <div id="map" style="height:280px; width:100%"></div>
-
+                        <div class="map-info">    
+                            <div id="map" style="height:280px; width:100%"></div>
+                            <p>Clique no mapa para adicionar a localização</p>
+                        </div>
                         <div class="input-block">
                             <label>Nome</label>
                             <input name="name" type="text" value=""/>
@@ -107,7 +108,7 @@
 
                         reader.onload = function(event) {
                             $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
-                        }
+                        };
 
                         reader.readAsDataURL(input.files[i]);
                     }
@@ -148,7 +149,7 @@
                 map = new google.maps.Map(document.getElementById('map'),
                     mapOptions);
                     
-                google.maps.event.addListener(map, 'rightclick', function(event) {
+                google.maps.event.addListener(map, 'click', function(event) {
                     placeMarker(event.latLng);
                 });  
             }

@@ -12,8 +12,8 @@
         <link rel="stylesheet" type="text/css" href="styles/global.css">
         <link rel="stylesheet" type="text/css" href="styles/newOrphanage.css">
         <link rel="stylesheet" type="text/css" href="styles/orphanage.css">
-
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+        
         <script language="JavaScript" src="scripts/biblio.js"></script>
         
         <title>JSP Page</title>
@@ -54,7 +54,8 @@
                         </p>
 
                         <div class="map-container">
-                            <div id="map"></div>
+                         
+                            <img src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-53.027,-24.1865,13.25,0/537x280?access_token=pk.eyJ1IjoiYWx0LWphbXMiLCJhIjoiY2tqeW1hZzF1MGV5dDJwcDRjcm4zMWpraiJ9.JQYR_VJ00YqNBVx37LHZ1g" alt="map"/>
 
                             <footer>
                                 <a target= "_blank" rel="noopener noreferrer" href={`https://www.google.com/maps/dir/?api=1&destination=${orphanage.latitude},${orphanage.longitude}`}>Ver rotas no Google Maps</a>

@@ -80,6 +80,10 @@ and open the template in the editor.
   border-radius: 20px;
 }
 
+.orphanage-details .orphanage-details-content .map-container img{
+    border-radius: 20px;
+}
+
 .orphanage-details .orphanage-details-content .map-container footer {
   padding: 20px 0;
   text-align: center;

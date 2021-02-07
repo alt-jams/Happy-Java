@@ -142,11 +142,9 @@ and open the template in the editor.
     background: #dae1e4;
 }
 
-.map{
-    height: 190px;
-    background: #37C77F;
+.map img{
+   
     border-radius: 20px;
-    border: 1px solid #D3E2E5;
 }
 
 
