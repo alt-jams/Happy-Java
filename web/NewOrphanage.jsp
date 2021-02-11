@@ -97,7 +97,7 @@
         
         <script>
             $(function() {
-            // Multiple images preview in browser
+            
             var imagesPreview = function(input, placeToInsertImagePreview) {
 
                 if (input.files) {

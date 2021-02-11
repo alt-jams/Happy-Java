@@ -6,16 +6,35 @@
 package Entities;
 
 import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author Jamilly
  */
+
+@Entity
+@Table(name="user")
+
 public class User {
     private int id;
     private String email;
-    private String senha;
+    private String password;
 
+    public User() {
+    }
+
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+    
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     public int getId() {
         return id;
     }
@@ -23,7 +42,8 @@ public class User {
     public void setId(int id) {
         this.id = id;
     }
-
+    
+    @Column(name="email", nullable = false)
     public String getEmail() {
         return email;
     }
@@ -32,13 +52,13 @@ public class User {
         this.email = email;
     }
 
-    public String getSenha() {
-        return senha;
+    @Column(name="password", nullable = false)
+    public String getPassword() {
+        return password;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-    
+    public void setPassword(String password) {
+        this.password = password;
+    } 
     
 }

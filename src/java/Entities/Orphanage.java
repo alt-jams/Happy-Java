@@ -6,12 +6,22 @@
 package Entities;
 
 import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author Jamilly
  */
+
+@Entity
+@Table(name = "orphanage")
+
 public class Orphanage {
     private int id;
     private String name;
@@ -23,9 +33,9 @@ public class Orphanage {
     private String openingHours;
     private boolean openOnWeekends;
     private List<Image> images;
-    private boolean status;
+    private boolean status; //se foi aceito ou está esperando o administrador aceitar
 
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     public int getId() {
         return id;
     }
@@ -34,6 +44,7 @@ public class Orphanage {
         this.id = id;
     }
 
+    @Column(name="name", nullable = false)
     public String getName() {
         return name;
     }
@@ -42,6 +53,7 @@ public class Orphanage {
         this.name = name;
     }
 
+    @Column(name="phone_number", nullable = false)
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -50,6 +62,7 @@ public class Orphanage {
         this.phoneNumber = phoneNumber;
     }
 
+    @Column(name="latitude", nullable = false)
     public String getLatitude() {
         return latitude;
     }
@@ -58,6 +71,7 @@ public class Orphanage {
         this.latitude = latitude;
     }
 
+    @Column(name="longitude", nullable = false)
     public String getLongitude() {
         return longitude;
     }
@@ -66,6 +80,7 @@ public class Orphanage {
         this.longitude = longitude;
     }
 
+    @Column(name="about", nullable = false)
     public String getAbout() {
         return about;
     }
@@ -74,6 +89,7 @@ public class Orphanage {
         this.about = about;
     }
 
+    @Column(name="instructions", nullable = false)
     public String getInstructions() {
         return instructions;
     }
@@ -82,6 +98,7 @@ public class Orphanage {
         this.instructions = instructions;
     }
 
+    @Column(name="opening_hours", nullable = false)
     public String getOpeningHours() {
         return openingHours;
     }
@@ -90,6 +107,7 @@ public class Orphanage {
         this.openingHours = openingHours;
     }   
 
+    @Column(name="is_open_on_weekends", nullable = false)
     public boolean isOpenOnWeekends() {
         return openOnWeekends;
     }
@@ -98,6 +116,7 @@ public class Orphanage {
         this.openOnWeekends = openOnWeekends;
     }
 
+    @OneToMany(mappedBy = "orphanage")
     public List<Image> getImages() {
         return images;
     }
@@ -106,6 +125,7 @@ public class Orphanage {
         this.images = images;
     }
 
+    @Column(name="status", nullable = false)
     public boolean isStatus() {
         return status;
     }
