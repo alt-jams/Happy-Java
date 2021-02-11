@@ -35,6 +35,9 @@ public class Orphanage {
     private List<Image> images;
     private boolean status; //se foi aceito ou está esperando o administrador aceitar
 
+    public Orphanage() {
+    }
+
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     public int getId() {
         return id;

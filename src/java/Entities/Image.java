@@ -26,7 +26,15 @@ public class Image {
     private Orphanage orphanage;
     private String path;
 
-@Id @GeneratedValue(strategy = GenerationType.AUTO)    
+    public Image() {
+    }
+    
+    public Image(Orphanage orphanage, String path) {
+        this.orphanage = orphanage;
+        this.path = path;
+    }
+
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)    
     public int getId() {
         return id;
     }
