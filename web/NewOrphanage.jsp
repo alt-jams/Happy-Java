@@ -36,8 +36,10 @@
                         <legend>Dados</legend>
                         <div class="map-info">    
                             <div id="map" style="height:280px; width:100%"></div>
-                            <p>Clique no mapa para adicionar a localização</p>
+                            <p class="map-instruction">Clique no mapa para adicionar a localização</p>
                         </div>
+                            <input type="hidden" name="latitude" value="" />
+                            <input type="hidden" name="longitude" value="" />
                         <div class="input-block">
                             <label>Nome</label>
                             <input name="name" type="text" value=""/>
@@ -85,6 +87,7 @@
                                 <button onclick="setOpenTrue()" type="button" class="" id="open">Sim</button>
                                 <button onclick="setOpenFalse()" type="button" class="" id="dont-open">Não</button>
                             </div>
+                            <input type="hidden" id="open_on_weekends" name="open_on_weekends" value="" />
                         </div>
                     </fieldset>
 
@@ -96,30 +99,7 @@
         </div>
         
         <script>
-            $(function() {
-            
-            var imagesPreview = function(input, placeToInsertImagePreview) {
-
-                if (input.files) {
-                    var filesAmount = input.files.length;
-
-                    for (i = 0; i < filesAmount; i++) {
-                        var reader = new FileReader();
-
-                        reader.onload = function(event) {
-                            $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
-                        };
-
-                        reader.readAsDataURL(input.files[i]);
-                    }
-                }
-
-            };
-
-            $('#file-input').on('change', function() {
-                imagesPreview(this, 'div.preview');
-            });
-        });
+            imagesPreview();
         </script>
         
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClxNvUXtdVAFYsc2MX2CoZI4GyXx85-lg"></script>

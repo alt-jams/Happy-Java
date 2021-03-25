@@ -3,13 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/conf/persistence.xml</file>
             <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/web/Login.jsp</file>
             <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Entities/Image.java</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/web/NewOrphanage.jsp</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Entities/Orphanage.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Models/UserModel.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/DAO/UserDAO.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/Login.java</file>
             <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/web/styles/login.css</file>
             <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Entities/User.java</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/web/Acceptance.jsp</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/DAO/GenericDAO.java</file>
         </group>
     </open-files>
 </project-private>

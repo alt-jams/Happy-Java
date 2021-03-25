@@ -7,6 +7,8 @@ package Controllers;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,6 +25,10 @@ public class Landing extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         request.getRequestDispatcher("Landing.jsp").forward(request, response); 
+        
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("HappyPU");
+        
+        factory.close();
     }
 
 }

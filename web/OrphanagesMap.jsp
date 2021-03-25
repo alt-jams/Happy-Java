@@ -40,7 +40,7 @@
             </aside>
             
             <div>
-                <div id="map" style="height:100vh; width:840px"></div>
+                <div id="map" style="height:100vh; width:960px"></div>
                 <a href = "NewOrphanage" class="create-orphanage">
                     <i class="fas fa-plus"></i>
                 </a> 

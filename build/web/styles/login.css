@@ -42,6 +42,7 @@
     background:#FFFFFF;
     
     height: 100%;
+    width: 38%;
 }
 
 .arrow-left{
@@ -152,4 +153,9 @@
 
 .error{
     color: #ea3e3e !important;
+}
+
+p{
+    margin-top: 10px;
+    color: #ea3e3e;
 }

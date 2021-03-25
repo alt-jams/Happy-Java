@@ -5,8 +5,11 @@
  */
 package Controllers;
 
+import Entities.User;
+import Models.UserModel;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URLEncoder;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +31,26 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         request.setCharacterEncoding("UTF-8");
-        response.sendRedirect("Dashboard");
+        
+        String user = request.getParameter("user");
+        String password = request.getParameter("password");
+        
+        System.out.println(user);
+        System.out.println(password);
+
+        
+        UserModel model = new UserModel();
+        User loggedIn = model.login(user, password);
+        
+        
+        if(loggedIn == null){
+            String error = URLEncoder.encode("Usuário ou senha inválida!", "ISO-8859-1");
+            response.sendRedirect("Login?erro=" + error);
+            
+        }else{
+            response.sendRedirect("Dashboard");
+        }
+        
     }
     
 

@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +15,8 @@
         <link rel="stylesheet" type="text/css" href="styles/global.css">
         <link rel="stylesheet" type="text/css" href="styles/login.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+        
+        <script language="JavaScript" src="scripts/biblio.js"></script>
         
         <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -52,7 +55,13 @@
                         <input id="password" name="password" type="password"/>
                     </div>
                 </fieldset>
-
+                
+                <c:if test="${param.erro != null}">
+                    <p>
+                        ${param.erro}
+                    </p>
+                </c:if>
+                    
                 <button class="enter-button" type="submit">
                     Entrar
                 </button>
@@ -61,21 +70,7 @@
         </div>
         
         <script>
-            $("#login-form").validate({
-                rules:{
-                        user:"required",
-                        password:"required",
-                },
-
-                messages: {
-                        user:"Digite seu nome de usuário",
-                        password:"Digite a sua senha",
-                },
-
-                submitHandler: function(form){
-                    form.submit();	
-                }
-            });
+            validateForm();
         </script>
     </body>
 </html>

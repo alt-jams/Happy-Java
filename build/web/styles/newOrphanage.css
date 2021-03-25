@@ -85,7 +85,7 @@ and open the template in the editor.
     margin-bottom: 40px;
 }
 
-.map-info p{
+.map-info .map-instruction{
     color: #0089A5;
     text-align: center;
 }
