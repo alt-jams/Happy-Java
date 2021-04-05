@@ -31,7 +31,7 @@
                 </div>
 
                 <footer>
-                    <button type="button" onclick="window.location.href='Landing'" >
+                    <button type="button" onclick="window.location.href='Logout'" >
                         <i class="fas fa-power-off"></i>
                     </button>
                 </footer>

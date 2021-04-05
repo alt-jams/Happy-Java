@@ -18,19 +18,16 @@ import javax.servlet.http.HttpSession;
  *
  * @author Jamilly
  */
-@WebServlet(name = "WaitingRegistration", urlPatterns = {"/WaitingRegistration"})
-public class WaitingRegistration extends HttpServlet {
+@WebServlet(name = "Logout", urlPatterns = {"/Logout"})
+public class Logout extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        
         HttpSession session = request.getSession(false);
         
-        if (session == null || session.getAttribute("isLoggedIn") == null) {
-            response.sendRedirect("Login");
-        } else {
-            request.getRequestDispatcher("WaitingRegistration.jsp").forward(request, response);
-        }
+        session.invalidate();
+        
+        response.sendRedirect("Login");
+        
     }
-
 }

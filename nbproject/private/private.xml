@@ -3,15 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/conf/persistence.xml</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/Dashboard.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/DeleteOrphanage.java</file>
             <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/web/Login.jsp</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Entities/Image.java</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Models/UserModel.java</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/DAO/UserDAO.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/Done.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/web/Dashboard.jsp</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/WaitingRegistration.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/web/WaitingRegistration.jsp</file>
             <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/Login.java</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/web/styles/login.css</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Entities/User.java</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/DAO/GenericDAO.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/Logout.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/Acceptance.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/web/Acceptance.jsp</file>
         </group>
     </open-files>
 </project-private>
