@@ -8,7 +8,6 @@ package Controllers;
 import Entities.User;
 import Models.UserModel;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.net.URLEncoder;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

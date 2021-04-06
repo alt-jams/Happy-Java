@@ -14,7 +14,7 @@
         <link rel="stylesheet" type="text/css" href="styles/waitingRegistration.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
         
-        <title>JSP Page</title>
+        <title>Esperando Registro</title>
     </head>
     <body>
         <div id = "dashboard-page">

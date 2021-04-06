@@ -16,7 +16,7 @@
         
         <script language="JavaScript" src="scripts/biblio.js"></script>
         
-        <title>JSP Page</title>
+        <title>Orfanato</title>
     </head>
     <body>
         <div id="new-page">

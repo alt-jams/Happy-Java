@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="styles/done.css">
         <link rel="stylesheet" type="text/css" href="styles/delete.css">
 
-        <title>Cadastro efetuado</title>
+        <title>Deletar orfanato</title>
         
     </head>
     <body>

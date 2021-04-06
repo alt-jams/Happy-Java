@@ -16,7 +16,7 @@
      
         <script language="JavaScript" src="scripts/biblio.js"></script>
         
-        <title>Criar Orfanato</title>
+        <title>Aceitar orfanato</title>
     </head>
     <body>
         <div id="new-page">
