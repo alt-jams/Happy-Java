@@ -31,69 +31,66 @@
             
             <main>
                 <form action="Acceptance" method="post" class="create-orphanage-form">
-                    <fieldset>
+                    <fieldset disabled>
                         <legend>Dados</legend>
 
                         <div id="map" style="height:280px; width:100%"></div>
 
                         <div class="input-block">
                             <label>Nome</label>
-                            <input name="name" type="text" value="Orphanage name" disabled/>
+                            <input name="name" type="text" value="Orphanage name"/>
                         </div>
 
                         <div class="input-block">
                             <label>Número de Whatsapp</label>
-                            <input name="phone-number" type="text" value="Phone number" disabled/>
+                            <input name="phone-number" type="text" value="Phone number"/>
                         </div>
 
                         <div class="input-block">
                             <label>Sobre <span>Máximo de 300 caracteres</span></label>
-                            <textarea name="about" maxlength="300" value="" disabled>About</textarea> 
+                            <textarea name="about" maxlength="300" value="" >About</textarea> 
                         </div>
 
                         <div class="input-block">
                             <label>Fotos</label> 
-                            <div class="images-container">                        
-                                <label class="new-image">
-                                    <i class="fas fa-plus"></i>
-                                    <input multiple name="image" id="file-input" type="file" />    
-                                </label>
-                                <div id="preview"></div>
-                                
+                            <div class="images-container">  
+                                <!-- for i in images-->
+                                     <img src="images/teste.png" alt="teste" />
+                                     <img src="images/teste2.jpeg" alt="teste2" /> 
                             </div>
-
                             
                         </div>
                     </fieldset>
 
-                    <fieldset>
+                    <fieldset disabled>
                         <legend>Visitação</legend>
 
                         <div class="input-block">
                             <label>Instruções</label>
-                            <textarea name="instructions" value="" disabled>instructions</textarea>
+                            <textarea name="instructions" value="">instructions</textarea>
                         </div>
 
                         <div class="input-block">
                             <label>Horário de funcionamento</label>
-                            <input name="opening_hours" value="Opening hours" disabled/>
+                            <input name="opening_hours" value="Opening hours"/>
                         </div>
 
                         <div class="input-block">
                             <label>Atende fim de semana</label>
 
                             <div class="button-select">
-                                <button onclick="setOpenTrue()" type="button" class="" id="open">Sim</button>
-                                <button onclick="setOpenFalse()" type="button" class="" id="dont-open">Não</button>
+                                <!-- if openOnWeekends == true{setClassName = "active"} -->
+                                <button type="button" class="active">Sim</button>
+                                <button  type="button" class="" >Não</button>
                             </div>
                         </div>
                     </fieldset>
                     
                     <div class="buttons-content">
-                        <button class="deny" type="submit">
+                        <button class="deny" type="submit" >
                             <i class="far fa-times-circle"></i> &#32; Recusar
                         </button>
-                        <button class="allow" type="submit">
+                        <button class="allow" type="submit" name="is_acepted" value = "yes">
                             <i class="far fa-check-circle"></i> &#32; Aceitar
                         </button>
                     </div>

@@ -58,6 +58,10 @@ and open the template in the editor.
     background: #25d47c;
 }
 
+.create-orphanage-form .input-block .button-select button:hover{
+    cursor: inherit;
+}
+
 main{
     margin-bottom: 50px;
 }
