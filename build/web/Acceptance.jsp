@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -38,17 +40,17 @@
 
                         <div class="input-block">
                             <label>Nome</label>
-                            <input name="name" type="text" value="Orphanage name"/>
+                            <input name="name" type="text" value="${orphanage.name}"/>
                         </div>
 
                         <div class="input-block">
                             <label>Número de Whatsapp</label>
-                            <input name="phone-number" type="text" value="Phone number"/>
+                            <input name="phone-number" type="text" value="${orphanage.phoneNumber}"/>
                         </div>
 
                         <div class="input-block">
                             <label>Sobre <span>Máximo de 300 caracteres</span></label>
-                            <textarea name="about" maxlength="300" value="" >About</textarea> 
+                            <textarea name="about" maxlength="300" value="" >${orphanage.about}</textarea> 
                         </div>
 
                         <div class="input-block">
@@ -67,30 +69,47 @@
 
                         <div class="input-block">
                             <label>Instruções</label>
-                            <textarea name="instructions" value="">instructions</textarea>
+                            <textarea name="instructions" value="">${orphanage.instructions}</textarea>
                         </div>
 
                         <div class="input-block">
                             <label>Horário de funcionamento</label>
-                            <input name="opening_hours" value="Opening hours"/>
+                            <input name="opening_hours" value="${orphanage.openingHours}"/>
                         </div>
 
                         <div class="input-block">
                             <label>Atende fim de semana</label>
 
                             <div class="button-select">
-                                <!-- if openOnWeekends == true{setClassName = "active"} -->
-                                <button type="button" class="active">Sim</button>
-                                <button  type="button" class="" >Não</button>
+
+                                <c:choose>
+                                    <c:when test="${orphanage.openOnWeekends == true}">
+                                        <button type="button" class="active">Sim</button>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <button type="button" class="">Sim</button>
+                                    </c:otherwise>                
+                                </c:choose>
+                                
+                                        
+                                <c:choose>
+                                    <c:when test="${orphanage.openOnWeekends == false}">
+                                        <button  type="button" class="active" >Não</button>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <button  type="button" class="" >Não</button>
+                                    </c:otherwise>                
+                                </c:choose>       
+                                
                             </div>
                         </div>
                     </fieldset>
                     
                     <div class="buttons-content">
-                        <button class="deny" type="submit" >
+                        <button class="deny" type="button" onclick="window.location.href='DeleteOrphanage?id=${orphanage.id}'" >
                             <i class="far fa-times-circle"></i> &#32; Recusar
                         </button>
-                        <button class="allow" type="submit" name="is_acepted" value = "yes">
+                        <button class="allow" type="submit" name="is_acepted" >
                             <i class="far fa-check-circle"></i> &#32; Aceitar
                         </button>
                     </div>

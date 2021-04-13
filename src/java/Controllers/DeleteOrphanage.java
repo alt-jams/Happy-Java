@@ -5,6 +5,7 @@
  */
 package Controllers;
 
+import Models.OrphanageModel;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,7 +22,12 @@ public class DeleteOrphanage extends HttpServlet {
 
    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-         
+        int id = Integer.parseInt(request.getParameter("id"));
+        
+        OrphanageModel model = new OrphanageModel();
+        Entities.Orphanage orphanage = model.getOrphanage(id);
+        
+        request.setAttribute("orphanage", orphanage);
         request.getRequestDispatcher("DeleteOrphanage.jsp").forward(request, response);
         
     }

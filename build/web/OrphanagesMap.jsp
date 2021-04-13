@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -65,36 +66,39 @@
                     },
                 };
                 
-                const contentString = '<div class = "map-popup">' +
-                                            "<p>Orphanage Name</p>" +
-                                            '<a href="Orphanage">' +
-                                                '<i class="fas fa-arrow-right"></i>' +
-                                            "</a>" +
-                                      "</div>";
-                              
-                const infowindow = new google.maps.InfoWindow({
-                    content: contentString,
-                });
-                
                 map = new google.maps.Map(document.getElementById('map'),
-                    mapOptions);
-                  
+                        mapOptions);
+                        
                 var icon = {
                     url: "images/map-marker.svg",
                     scaledSize : new google.maps.Size(60, 60)
                 };
                 
-                // {orphanages.map(orphanage =>   
-                //c: forEach ?
-                const marker = new google.maps.Marker({
-                    position: { lat: -24.186301, lng: -53.033229},
-                    map,
-                    title: "Hello World!",
-                    icon: icon
-                });
-                marker.addListener("click", () => {
-                    infowindow.open(map, marker);
-                });
+        // {orphanages.map(orphanage =>   
+                <c:forEach var="orphanage" items="${orphanages}">
+                    const contentString${orphanage.name} = '<div class = "map-popup">' +
+                                                "<p>${orphanage.name}</p>" +
+                                                '<a href="Orphanage?id=${orphanage.id}">' +
+                                                    '<i class="fas fa-arrow-right"></i>' +
+                                                "</a>" +
+                                          "</div>";
+
+                    const infowindow${orphanage.name} = new google.maps.InfoWindow({
+                        content: contentString${orphanage.name},
+                    });
+
+                    
+                    const marker${orphanage.name} = new google.maps.Marker({
+                        position: { lat: ${orphanage.latitude}, lng: ${orphanage.longitude}},
+                        map,
+                        title: "Hello World!",
+                        icon: icon
+                    });
+                    marker${orphanage.name}.addListener("click", () => {
+                        infowindow${orphanage.name}.open(map, marker${orphanage.name});
+                    });
+                
+                </c:forEach>
             }
 
             google.maps.event.addDomListener(window, 'load', initialize);

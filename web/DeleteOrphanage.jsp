@@ -22,7 +22,7 @@
                 <main>
                     <h1>Excluir!</h1>
                     <p>
-                        Você tem certeza que quer excluir o Orfanato < orphanage name >?
+                        Você tem certeza que quer excluir o Orfanato ${orphanage.name}?
                     </p>
                 </main>
                 <div class="buttons">

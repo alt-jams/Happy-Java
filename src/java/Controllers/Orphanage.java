@@ -5,6 +5,7 @@
  */
 package Controllers;
 
+import Models.OrphanageModel;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +21,21 @@ import javax.servlet.http.HttpServletResponse;
 public class Orphanage extends HttpServlet {
 
    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        request.getRequestDispatcher("Orphanage.jsp").forward(request, response); 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+        
+        int id = Integer.parseInt(request.getParameter("id"));
+        
+        OrphanageModel model = new OrphanageModel();
+        Entities.Orphanage orphanage = model.getOrphanage(id);
+        
+        if (orphanage == null ){
+            response.sendRedirect("OrphanagesMap");
+        }else{
+            request.setAttribute("orphanage", orphanage);
+            request.getRequestDispatcher("Orphanage.jsp").forward(request, response);
+        }
+        
+        
     }
 }

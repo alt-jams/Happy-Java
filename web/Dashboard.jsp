@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -40,50 +41,30 @@
             <main>
                 <div class="top">
                     <h1>Orfanatos Cadastrados</h1>
-                    <p>x Orfanatos</p>
+                    <p>${orphanages.size()} Orfanatos</p>
                 </div>
 
                 <div class="listing">
-
-                    <div class="orphanage-block">
-                        <div class="map">
-                            <img src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-53.027,-24.1865,13.25,0/439x185?access_token=pk.eyJ1IjoiYWx0LWphbXMiLCJhIjoiY2tqeW1hZzF1MGV5dDJwcDRjcm4zMWpraiJ9.JQYR_VJ00YqNBVx37LHZ1g" alt="map"/>
-                        </div>
-
-                        <div class="orphanage-info">
-                            <p>Orphanage name</p>
-                            <div>
-                                <button type="button" onclick="window.location.href='NewOrphanage'" class="edit-button1">
-                                    <i class="far fa-edit"></i>
-                                </button>
-
-                                <button type="button" onclick="window.location.href='DeleteOrphanage'" class="edit-button2">
-                                    <i class="far fa-trash-alt"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div> 
-
-                    <div class="orphanage-block">
-                        <div class="map">
-                            <img src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-53.027,-24.1865,13.25,0/439x185?access_token=pk.eyJ1IjoiYWx0LWphbXMiLCJhIjoiY2tqeW1hZzF1MGV5dDJwcDRjcm4zMWpraiJ9.JQYR_VJ00YqNBVx37LHZ1g" alt="map"/>
-                        </div>
-
-                        <div class="orphanage-info">
-                            <p>Orphanage name</p>
-                            <div>
-                                <button type="button" onclick="window.location.href='NewOrphanage'" class="edit-button1" >
-                                    <i class="far fa-edit"></i>
-                                </button>
-
-                                <button type="button" onclick="window.location.href='DeleteOrphanage'" class="edit-button2">
-                                    <i class="far fa-trash-alt"></i>
-                                </button>
+                    <c:forEach var="orphanage" items="${orphanages}">
+                        <div class="orphanage-block">
+                            <div class="map">
+                                <img src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-s+D3320F(${orphanage.longitude},${orphanage.latitude})/${orphanage.longitude},${orphanage.latitude},13.25,0/439x185?access_token=pk.eyJ1IjoiYWx0LWphbXMiLCJhIjoiY2tqeW1hZzF1MGV5dDJwcDRjcm4zMWpraiJ9.JQYR_VJ00YqNBVx37LHZ1g' alt="map"/>
                             </div>
 
-                        </div>
+                            <div class="orphanage-info">
+                                <p>${orphanage.name}</p>
+                                <div>
+                                    <button type="button" onclick="window.location.href='NewOrphanage'" class="edit-button1">
+                                        <i class="far fa-edit"></i>
+                                    </button>
 
-                    </div> 
+                                    <button type="button" onclick="window.location.href='DeleteOrphanage?id=${orphanage.id}'" class="edit-button2">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div> 
+                    </c:forEach>
 
                 </div>
             </main>

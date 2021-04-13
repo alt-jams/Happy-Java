@@ -5,7 +5,9 @@
  */
 package Controllers;
 
+import Models.OrphanageModel;
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +23,12 @@ public class Acceptance extends HttpServlet {
 
    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        int id = Integer.parseInt(request.getParameter("id"));
         
+        OrphanageModel model = new OrphanageModel();
+        Entities.Orphanage orphanage = model.getOrphanage(id);
+        
+        request.setAttribute("orphanage", orphanage);
         request.getRequestDispatcher("Acceptance.jsp").forward(request, response);
         
     }
@@ -30,13 +37,7 @@ public class Acceptance extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         request.setCharacterEncoding("UTF-8");
         
-        String isAcepted = request.getParameter("is_acepted");
-        
-        if (isAcepted == null) {
-            // refused - delete orphanage
-        }else{
-            //acepted - set status
-        }
+       
         
         response.sendRedirect("WaitingRegistration");
     }

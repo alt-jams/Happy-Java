@@ -5,7 +5,9 @@
  */
 package Controllers;
 
+import Models.OrphanageModel;
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,13 +25,12 @@ public class WaitingRegistration extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         
-        HttpSession session = request.getSession(false);
+        OrphanageModel model = new OrphanageModel();
+        List<Entities.Orphanage> orphanages = model.getWaitingOrphanages();
+
+        request.setAttribute("orphanages", orphanages);
+        request.getRequestDispatcher("WaitingRegistration.jsp").forward(request, response);
         
-        if (session == null || session.getAttribute("isLoggedIn") == null) {
-            response.sendRedirect("Login");
-        } else {
-            request.getRequestDispatcher("WaitingRegistration.jsp").forward(request, response);
-        }
     }
 
 }
