@@ -25,13 +25,20 @@ public class Image {
     private int id;
     private Orphanage orphanage;
     private String path;
+    private String contentType;
 
     public Image() {
     }
     
-    public Image(Orphanage orphanage, String path) {
+    public Image(Orphanage orphanage, String path, String contentType) {
         this.orphanage = orphanage;
         this.path = path;
+        this.contentType = contentType;
+    }
+    
+    public Image( String path, String contentType) {
+        this.path = path;
+        this.contentType = contentType;
     }
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)    
@@ -60,6 +67,15 @@ public class Image {
 
     public void setPath(String path) {
         this.path = path;
+    }
+
+    @Column(nullable = false)
+    public String getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
     }
     
 }

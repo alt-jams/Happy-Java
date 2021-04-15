@@ -22,11 +22,11 @@
                 <main>
                     <h1>Excluir!</h1>
                     <p>
-                        Você tem certeza que quer excluir o Orfanato ${orphanage.name}?
+                        Essa ação exclue o orfanato ${orphanage.name}. <br> Tem certeza que deseja continuar?
                     </p>
                 </main>
                 <div class="buttons">
-                    <a href = "Dashboard" class="go-back">
+                    <a href = "RemoveOrphanage?id=${orphanage.id}" class="go-back">
                         <p>Excluir Orfanato</p>
                     </a>
                     <a href = "Dashboard" class="go-back">

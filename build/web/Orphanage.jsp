@@ -32,20 +32,28 @@
 
             <main>
                 <div class="orphanage-details">
-                    <img src="images/teste.png" alt="teste" id="selectedImage"/>
+                    <img src="ShowImages?id=${images[0].id}" alt="teste" id="selectedImage"/>
 
                     <div class="images">
-                        <button class="active" 
-                                id="images/teste.png" 
-                                onclick = "setSelectedImage('images/teste.png')">  
-                            <img src="images/teste.png" alt=""/>
-                        </button>
-                        <button class="" 
-                                id="images/teste2.jpeg" 
-                                onclick = "setSelectedImage('images/teste2.jpeg')">  
-                            <img src="images/teste2.jpeg" alt=""/>
-                        </button>
-                        
+                        <c:forEach var="image" items="${images}">
+                            <c:choose>
+                                <c:when test = "${image.id == images[0].id}">
+                                    <button class="active" 
+                                        id="ShowImages?id=${image.id}" 
+                                        onclick = "setSelectedImage('ShowImages?id=${image.id}')">  
+                                            <img src="ShowImages?id=${image.id}" alt=""/>
+                                    </button>
+                                </c:when>
+                                <c:otherwise>
+                                    <button class="" 
+                                        id="ShowImages?id=${image.id}" 
+                                        onclick = "setSelectedImage('ShowImages?id=${image.id}')">  
+                                            <img src="ShowImages?id=${image.id}" alt=""/>
+                                    </button>
+                                </c:otherwise>        
+                            </c:choose>   
+                        </c:forEach>
+
                     </div>
 
                     <div class="orphanage-details-content">
@@ -96,7 +104,7 @@
                            
                         </div>
 
-                        <a target="_blank"  href = "http://api.whatsapp.com/send?1=pt_BR&phone=$">
+                        <a target="_blank"  href = 'http://api.whatsapp.com/send?1=pt_BR&phone=${orphanage.phoneNumber}'>
                             <button type="button" class="contact-button" >
                                 <i class="fab fa-whatsapp"></i>
                                 Entrar em contato

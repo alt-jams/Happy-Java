@@ -6,6 +6,7 @@
 package Entities;
 
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -33,10 +34,24 @@ public class Orphanage {
     private String openingHours;
     private boolean openOnWeekends;
     private List<Image> images;
-    private boolean status; //se foi aceito ou está esperando o administrador aceitar
+    private boolean status; //se foi aceito -> true, ou está esperando o administrador aceitar -> false
 
     public Orphanage() {
     }
+
+    public Orphanage(String name, String phoneNumber, String latitude, String longitude, String about, String instructions, String openingHours, boolean openOnWeekends) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.about = about;
+        this.instructions = instructions;
+        this.openingHours = openingHours;
+        this.openOnWeekends = openOnWeekends;
+        this.status = false;
+    }
+    
+    
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     public int getId() {
@@ -119,7 +134,7 @@ public class Orphanage {
         this.openOnWeekends = openOnWeekends;
     }
 
-    @OneToMany(mappedBy = "orphanage")
+    @OneToMany(mappedBy = "orphanage", cascade = CascadeType.ALL)
     public List<Image> getImages() {
         return images;
     }

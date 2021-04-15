@@ -5,8 +5,11 @@
  */
 package Controllers;
 
+import Entities.Image;
+import Models.ImageModel;
 import Models.OrphanageModel;
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,6 +35,10 @@ public class Orphanage extends HttpServlet {
         if (orphanage == null ){
             response.sendRedirect("OrphanagesMap");
         }else{
+            ImageModel imageModel = new ImageModel();
+            List<Image> images = imageModel.getOrphanageImages(orphanage.getId());
+            
+            request.setAttribute("images", images);
             request.setAttribute("orphanage", orphanage);
             request.getRequestDispatcher("Orphanage.jsp").forward(request, response);
         }

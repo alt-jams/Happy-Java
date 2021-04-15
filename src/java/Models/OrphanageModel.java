@@ -14,7 +14,13 @@ import java.util.List;
  * @author Jamilly
  */
 public class OrphanageModel {
-
+    
+    
+    public void insertOrphanage(Orphanage o){
+       OrphanageDAO dao = new OrphanageDAO();
+       dao.create(o);
+    }
+    
     public Orphanage getOrphanage(int id){
         OrphanageDAO dao = new OrphanageDAO();        
         Orphanage orphanage = dao.get(id);
@@ -31,5 +37,15 @@ public class OrphanageModel {
         OrphanageDAO dao = new OrphanageDAO();   
         return dao.getWaitingOrphanages();
     } 
+    
+    public void UpdateOrphanage(Orphanage orphanage){
+        OrphanageDAO dao = new OrphanageDAO();
+        dao.update(orphanage);
+    }
+    
+    public void deleteOrphanage(int id){
+        OrphanageDAO dao = new OrphanageDAO();
+        dao.remove(id);
+    }    
     
 }

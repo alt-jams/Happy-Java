@@ -69,33 +69,31 @@
                 map = new google.maps.Map(document.getElementById('map'),
                         mapOptions);
                         
-                var icon = {
+                 var icon = {
                     url: "images/map-marker.svg",
                     scaledSize : new google.maps.Size(60, 60)
                 };
                 
         // {orphanages.map(orphanage =>   
-                <c:forEach var="orphanage" items="${orphanages}">
-                    const contentString${orphanage.name} = '<div class = "map-popup">' +
+                 <c:forEach var="orphanage" items="${orphanages}">
+                    const contentString${orphanage.id} = '<div class = "map-popup">' +
                                                 "<p>${orphanage.name}</p>" +
                                                 '<a href="Orphanage?id=${orphanage.id}">' +
                                                     '<i class="fas fa-arrow-right"></i>' +
                                                 "</a>" +
                                           "</div>";
-
-                    const infowindow${orphanage.name} = new google.maps.InfoWindow({
-                        content: contentString${orphanage.name},
+                    const infowindow${orphanage.id} = new google.maps.InfoWindow({
+                        content: contentString${orphanage.id},
                     });
-
                     
-                    const marker${orphanage.name} = new google.maps.Marker({
+                    const marker${orphanage.id} = new google.maps.Marker({
                         position: { lat: ${orphanage.latitude}, lng: ${orphanage.longitude}},
                         map,
                         title: "Hello World!",
                         icon: icon
                     });
-                    marker${orphanage.name}.addListener("click", () => {
-                        infowindow${orphanage.name}.open(map, marker${orphanage.name});
+                    marker${orphanage.id}.addListener("click", () => {
+                        infowindow${orphanage.id}.open(map, marker${orphanage.id});
                     });
                 
                 </c:forEach>

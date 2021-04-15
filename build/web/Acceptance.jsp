@@ -56,9 +56,9 @@
                         <div class="input-block">
                             <label>Fotos</label> 
                             <div class="images-container">  
-                                <!-- for i in images-->
-                                     <img src="images/teste.png" alt="teste" />
-                                     <img src="images/teste2.jpeg" alt="teste2" /> 
+                                <c:forEach var="image" items="${images}">
+                                    <img src="ShowImages?id=${image.id}" alt="image" />
+                                </c:forEach>     
                             </div>
                             
                         </div>
@@ -109,7 +109,7 @@
                         <button class="deny" type="button" onclick="window.location.href='DeleteOrphanage?id=${orphanage.id}'" >
                             <i class="far fa-times-circle"></i> &#32; Recusar
                         </button>
-                        <button class="allow" type="submit" name="is_acepted" >
+                        <button class="allow" type="submit" name="is_acepted" value="${orphanage.id}" >
                             <i class="far fa-check-circle"></i> &#32; Aceitar
                         </button>
                     </div>

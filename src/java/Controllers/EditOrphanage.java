@@ -6,9 +6,9 @@
 package Controllers;
 
 import Entities.Image;
-import Models.OrphanageModel;
 import Entities.Orphanage;
 import Models.ImageModel;
+import Models.OrphanageModel;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -21,39 +21,53 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Jamilly
  */
-@WebServlet(name = "Acceptance", urlPatterns = {"/Acceptance"})
-public class Acceptance extends HttpServlet {
-
-   @Override
+@WebServlet(name = "EditOrphanage", urlPatterns = {"/EditOrphanage"})
+public class EditOrphanage extends HttpServlet {
+    
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        int id = Integer.parseInt(request.getParameter("id"));
+         int id = Integer.parseInt(request.getParameter("id"));
         
         OrphanageModel model = new OrphanageModel();
-        Entities.Orphanage orphanage = model.getOrphanage(id);
+        Orphanage orphanage = model.getOrphanage(id);
         
         ImageModel imageModel = new ImageModel();
         List<Image> images = imageModel.getOrphanageImages(orphanage.getId());
             
         request.setAttribute("images", images);
-        
         request.setAttribute("orphanage", orphanage);
-        request.getRequestDispatcher("Acceptance.jsp").forward(request, response);
-        
+        request.getRequestDispatcher("EditOrphanage.jsp").forward(request, response); 
     }
- 
+    
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         request.setCharacterEncoding("UTF-8");
         
-        OrphanageModel model = new OrphanageModel();
+        int id = Integer.parseInt(request.getParameter("id"));
         
-        int id = Integer.parseInt(request.getParameter("is_acepted"));
-        Orphanage o = model.getOrphanage(id);
-        o.setStatus(true);
+        OrphanageModel model = new OrphanageModel();
+        Entities.Orphanage o = model.getOrphanage(id);
+        
+        o.setLatitude(request.getParameter("latitude"));
+        o.setLongitude(request.getParameter("longitude"));
+        o.setName(request.getParameter("name"));
+        o.setPhoneNumber(request.getParameter("phone_number"));
+        o.setAbout(request.getParameter("about"));
+        o.setInstructions(request.getParameter("instructions"));
+        o.setOpeningHours(request.getParameter("opening_hours"));
+
+        boolean openOnWeekends;
+        
+        if (request.getParameter("open_on_weekends").equals("yes")){
+            o.setOpenOnWeekends(true);
+        }else{
+            o.setOpenOnWeekends(true);
+        }
         
         model.UpdateOrphanage(o);
         
-        request.getRequestDispatcher("Acceptance.jsp").forward(request, response);
+        response.sendRedirect("Dashboard");
+        
     }
-
 }

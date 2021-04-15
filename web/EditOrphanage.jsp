@@ -1,11 +1,13 @@
 <%-- 
-    Document   : NewOrphanage
-    Created on : 13/12/2020, 13:58:52
+    Document   : EditOrphanage
+    Created on : 15/04/2021, 19:15:14
     Author     : Jamilly
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -17,7 +19,7 @@
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         
-        <title>Criar Orfanato</title>
+        <title>Editar Orfanato</title>
     </head>
     <body>
         <div id="new-page">
@@ -31,9 +33,9 @@
             </aside>
             
             <main>
-                <form action="NewOrphanage" method="post" class="create-orphanage-form" enctype="multipart/form-data">
+                <form action="EditOrphanage" method="post" class="create-orphanage-form">
                     <fieldset>
-                        <legend>Dados</legend>
+                        <legend>Editar dados</legend>
                         <div class="map-info">    
                             <div id="map" style="height:280px; width:100%"></div>
                             <p class="map-instruction">Clique no mapa para adicionar a localização</p>
@@ -42,27 +44,25 @@
                             <input type="hidden" id="longitude" name="longitude" value="" />
                         <div class="input-block">
                             <label>Nome</label>
-                            <input name="name" type="text" value=""/>
+                            <input name="name" type="text" value="${orphanage.name}"/>
                         </div>
 
                         <div class="input-block">
                             <label>Número de Whatsapp</label>
-                            <input name="phone_number" type="text" value=""/>
+                            <input name="phone_number" type="text" value="${orphanage.phoneNumber}"/>
                         </div>
 
                         <div class="input-block">
                             <label>Sobre <span>Máximo de 300 caracteres</span></label>
-                            <textarea name="about" maxlength="300" value=""></textarea> 
+                            <textarea name="about" maxlength="300" value="">${orphanage.about}</textarea> 
                         </div>
 
                         <div class="input-block">
                             <label>Fotos</label> 
                             <div class="images-container">                        
-                                <label class="new-image">
-                                    <i class="fas fa-plus"></i>
-                                    <input multiple name="image" id="file-input" type="file"/>    
-                                </label>
-                                <div class="preview"></div> 
+                                <c:forEach var="image" items="${images}">
+                                    <img src="ShowImages?id=${image.id}" alt="image" />
+                                </c:forEach>
                             </div>  
                         </div>
                     </fieldset>
@@ -72,35 +72,40 @@
 
                         <div class="input-block">
                             <label>Instruções</label>
-                            <textarea name="instructions" value=""></textarea>
+                            <textarea name="instructions" value="">${orphanage.instructions}</textarea>
                         </div>
 
                         <div class="input-block">
                             <label>Horário de funcionamento</label>
-                            <input name="opening_hours" value=""/>
+                            <input name="opening_hours" value="${orphanage.openingHours}"/>
                         </div>
 
                         <div class="input-block">
                             <label>Atende fim de semana</label>
 
+                            
                             <div class="button-select">
                                 <button onclick="setOpenTrue()" type="button" class="" id="open">Sim</button>
-                                <button onclick="setOpenFalse()" type="button" class="" id="dont-open">Não</button>
+                                <button onclick="setOpenFalse()" type="button" class="active" id="dont-open">Não</button>
                             </div>
-                            <input type="hidden" id="open_on_weekends" name="open_on_weekends" value="" />
+                            
+                            <input type="hidden" id="open_on_weekends" name="open_on_weekends" value="no" />
                         </div>
+                        
+                        <c:if test="${orphanage.openOnWeekends == true}">
+                            <script>
+                                setOpenTrue()
+                            </script>
+                        </c:if>
                     </fieldset>
 
-                    <button class="confirm-button" type="submit">
-                        Confirmar
+                    <button class="confirm-button" type="submit" name="id" value="${orphanage.id}">
+                        Editar
                     </button>
                 </form>
             </main>
         </div>
-        
-        <script>
-            imagesPreview();
-        </script>
+
         
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClxNvUXtdVAFYsc2MX2CoZI4GyXx85-lg"></script>
         
@@ -116,7 +121,7 @@
             function initialize() {
                 var mapOptions = {
                     zoom: 15,
-                    center: new google.maps.LatLng(-24.1868833,-53.0230323),
+                    center: new google.maps.LatLng(${orphanage.latitude},${orphanage.longitude}),
                     disableDefaultUI: true,
                     zoomControl: true,
                     zoomControlOptions : {
@@ -130,6 +135,12 @@
                 google.maps.event.addListener(map, 'click', function(event) {
                     placeMarker(event.latLng);
                 });  
+                
+                marker = new google.maps.Marker({
+                        position: {lat: ${orphanage.latitude}, lng: ${orphanage.longitude}},
+                        map: map,
+                        icon: icon
+                });
             }
             
             function placeMarker(location) {

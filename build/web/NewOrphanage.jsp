@@ -31,15 +31,15 @@
             </aside>
             
             <main>
-                <form action="NewOrphanage" method="post" class="create-orphanage-form">
+                <form action="NewOrphanage" method="post" class="create-orphanage-form" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Dados</legend>
                         <div class="map-info">    
                             <div id="map" style="height:280px; width:100%"></div>
                             <p class="map-instruction">Clique no mapa para adicionar a localização</p>
                         </div>
-                            <input type="hidden" name="latitude" value="" />
-                            <input type="hidden" name="longitude" value="" />
+                            <input type="hidden" id="latitude" name="latitude" value="" />
+                            <input type="hidden" id="longitude" name="longitude" value="" />
                         <div class="input-block">
                             <label>Nome</label>
                             <input name="name" type="text" value=""/>
@@ -47,7 +47,7 @@
 
                         <div class="input-block">
                             <label>Número de Whatsapp</label>
-                            <input name="phone-number" type="text" value=""/>
+                            <input name="phone_number" type="text" value=""/>
                         </div>
 
                         <div class="input-block">
@@ -60,7 +60,7 @@
                             <div class="images-container">                        
                                 <label class="new-image">
                                     <i class="fas fa-plus"></i>
-                                    <input multiple name="image" id="file-input" type="file" />    
+                                    <input multiple name="image" id="file-input" type="file"/>    
                                 </label>
                                 <div class="preview"></div> 
                             </div>  
@@ -108,8 +108,6 @@
             
             var map;
             var marker;
-            var lat;
-            var lng;
             var icon = {
                     url: "images/map-marker.svg",
                     scaledSize : new google.maps.Size(60, 60)
@@ -142,11 +140,13 @@
                         icon: icon
                     });
                     
+                    document.getElementById("latitude").value = location.lat();
+                    document.getElementById("longitude").value = location.lng();
+                    
                     marker.addListener('click', function(){
                         this.setMap(null);
                         marker = null;
-                        lat = null;
-                        lng = null;
+
                     })
                 }
                 else {
