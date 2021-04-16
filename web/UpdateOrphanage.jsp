@@ -17,7 +17,9 @@
         
         <script language="JavaScript" src="scripts/biblio.js"></script>
         
+        <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
         
         <title>Editar Orfanato</title>
     </head>
@@ -26,22 +28,23 @@
             <aside class = "sidebar">
                 <img src="images/map-marker.svg" alt="Happy" />
                 <footer>
-                    <button type="button" onclick="window.location.href='OrphanagesMap'" >
+                    <button type="button" onclick="window.location.href='Dashboard'" >
                         <i class="fas fa-arrow-left"></i>
                     </button>
                 </footer>
             </aside>
             
             <main>
-                <form action="EditOrphanage" method="post" class="create-orphanage-form">
+                <form action="UpdateOrphanage" method="post" class="create-orphanage-form" id="orphanage-form">
                     <fieldset>
                         <legend>Editar dados</legend>
+                        <input type="hidden" id="latitude" name="latitude" value="${orphanage.latitude}" />
+                        <input type="hidden" id="longitude" name="longitude" value="${orphanage.longitude}" />
                         <div class="map-info">    
                             <div id="map" style="height:280px; width:100%"></div>
                             <p class="map-instruction">Clique no mapa para adicionar a localização</p>
                         </div>
-                            <input type="hidden" id="latitude" name="latitude" value="" />
-                            <input type="hidden" id="longitude" name="longitude" value="" />
+                            
                         <div class="input-block">
                             <label>Nome</label>
                             <input name="name" type="text" value="${orphanage.name}"/>
@@ -105,7 +108,10 @@
                 </form>
             </main>
         </div>
-
+                        
+        <script>
+            validateOrphanageForm();
+        </script>    
         
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClxNvUXtdVAFYsc2MX2CoZI4GyXx85-lg"></script>
         
@@ -117,6 +123,11 @@
                     url: "images/map-marker.svg",
                     scaledSize : new google.maps.Size(60, 60)
                 };
+                
+            var icon2 = {
+                url: "images/removeIcon.svg",
+                scaledSize : new google.maps.Size(60, 60)
+            }    
             
             function initialize() {
                 var mapOptions = {
@@ -141,34 +152,13 @@
                         map: map,
                         icon: icon
                 });
+                
+                removeListener();
             }
-            
-            function placeMarker(location) {
-                if (marker == null) {
-                    marker = new google.maps.Marker({
-                        position: location,
-                        map: map,
-                        icon: icon
-                    });
-                    
-                    document.getElementById("latitude").value = location.lat();
-                    document.getElementById("longitude").value = location.lng();
-                    
-                    marker.addListener('click', function(){
-                        this.setMap(null);
-                        marker = null;
-
-                    })
-                }
-                else {
-                    marker.setMap(null);
-                    marker = null;
-                    placeMarker(location);
-                }
-
-          }
 
             google.maps.event.addDomListener(window, 'load', initialize);
+        
         </script>
+        
     </body>
 </html>

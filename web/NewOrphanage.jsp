@@ -15,7 +15,9 @@
         
         <script language="JavaScript" src="scripts/biblio.js"></script>
         
+        <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
         
         <title>Criar Orfanato</title>
     </head>
@@ -31,18 +33,20 @@
             </aside>
             
             <main>
-                <form action="NewOrphanage" method="post" class="create-orphanage-form" enctype="multipart/form-data">
+                <form action="NewOrphanage" method="post" class="create-orphanage-form" enctype="multipart/form-data" id="orphanage-form">
                     <fieldset>
                         <legend>Dados</legend>
+                        <input type="hidden" id="latitude" name="latitude" value="" />
+                        <input type="hidden" id="longitude" name="longitude" value="" />
                         <div class="map-info">    
                             <div id="map" style="height:280px; width:100%"></div>
                             <p class="map-instruction">Clique no mapa para adicionar a localização</p>
                         </div>
-                            <input type="hidden" id="latitude" name="latitude" value="" />
-                            <input type="hidden" id="longitude" name="longitude" value="" />
+                           
+                        
                         <div class="input-block">
                             <label>Nome</label>
-                            <input name="name" type="text" value=""/>
+                            <input name="name" id="name" type="text" value=""/>
                         </div>
 
                         <div class="input-block">
@@ -60,7 +64,7 @@
                             <div class="images-container">                        
                                 <label class="new-image">
                                     <i class="fas fa-plus"></i>
-                                    <input multiple name="image" id="file-input" type="file"/>    
+                                    <input multiple name="image" id="file-input" type="file" accept="image/*"/>    
                                 </label>
                                 <div class="preview"></div> 
                             </div>  
@@ -100,6 +104,7 @@
         
         <script>
             imagesPreview();
+
         </script>
         
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClxNvUXtdVAFYsc2MX2CoZI4GyXx85-lg"></script>
@@ -112,6 +117,11 @@
                     url: "images/map-marker.svg",
                     scaledSize : new google.maps.Size(60, 60)
                 };
+                
+            var icon2 = {
+                url: "images/removeIcon.svg",
+                scaledSize : new google.maps.Size(60, 60)
+            }    
             
             function initialize() {
                 var mapOptions = {
@@ -129,35 +139,15 @@
                     
                 google.maps.event.addListener(map, 'click', function(event) {
                     placeMarker(event.latLng);
-                });  
+                }); 
+                
             }
-            
-            function placeMarker(location) {
-                if (marker == null) {
-                    marker = new google.maps.Marker({
-                        position: location,
-                        map: map,
-                        icon: icon
-                    });
-                    
-                    document.getElementById("latitude").value = location.lat();
-                    document.getElementById("longitude").value = location.lng();
-                    
-                    marker.addListener('click', function(){
-                        this.setMap(null);
-                        marker = null;
-
-                    })
-                }
-                else {
-                    marker.setMap(null);
-                    marker = null;
-                    placeMarker(location);
-                }
-
-          }
 
             google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+        
+        <script>
+            validateOrphanageForm();
         </script>
     </body>
 </html>

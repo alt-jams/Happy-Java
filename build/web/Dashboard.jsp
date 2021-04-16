@@ -54,7 +54,7 @@
                             <div class="orphanage-info">
                                 <p>${orphanage.name}</p>
                                 <div>
-                                    <button type="button" onclick="window.location.href='EditOrphanage?id=${orphanage.id}'" class="edit-button1">
+                                    <button type="button" onclick="window.location.href='UpdateOrphanage?id=${orphanage.id}'" class="edit-button1">
                                         <i class="far fa-edit"></i>
                                     </button>
 

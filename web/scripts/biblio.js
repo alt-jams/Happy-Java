@@ -47,6 +47,40 @@ function validateForm(){
     });
 }
 
+function validateOrphanageForm(){
+    $.validator.setDefaults({
+        ignore: [],
+
+    });
+
+    $("#orphanage-form").validate({
+        rules: {
+            latitude: "required",
+            name: "required",
+            phone_number: "required",
+            about: "required",
+            instructions: "required",
+            opening_hours: "required",
+            open_on_weekends: "required",
+
+        },
+
+        messages: {
+            latitude: "Selecione o local no mapa",
+            name: "Digite o nome do orfanato",
+            phone_number: "Digite um número de telefone do orfanato",
+            about: "Informe sobre o orfanato",
+            instructions: "Digite as instruções de visita do orfanato",
+            opening_hours: "Digite o horário de abertura do orfanato",
+            open_on_weekends: "*obrigatório",
+        },
+
+        submitHandler: function (form) {
+            form.submit();
+        }
+    });
+}
+
 
 function imagesPreview(){
     $(function () {
@@ -72,5 +106,41 @@ function imagesPreview(){
         $('#file-input').on('change', function () {
             imagesPreview(this, 'div.preview');
         });
+    });
+}
+
+function placeMarker(location) {
+    if (marker == null) {
+        marker = new google.maps.Marker({
+            position: location,
+            map: map,
+            icon: icon
+        });
+
+        document.getElementById("latitude").value = location.lat();
+        document.getElementById("longitude").value = location.lng();
+
+        removeListener();
+
+        marker.addListener('click', function () {
+            this.setMap(null);
+            marker = null;
+
+        })
+    } else {
+        marker.setMap(null);
+        marker = null;
+        placeMarker(location);
+    }
+
+}
+
+function removeListener() {
+    google.maps.event.addListener(marker, 'mouseover', function () {
+        marker.setIcon(icon2);
+    });
+
+    google.maps.event.addListener(marker, 'mouseout', function () {
+        marker.setIcon(icon);
     });
 }

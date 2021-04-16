@@ -21,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Jamilly
  */
-@WebServlet(name = "EditOrphanage", urlPatterns = {"/EditOrphanage"})
-public class EditOrphanage extends HttpServlet {
+@WebServlet(name = "UpdateOrphanage", urlPatterns = {"/UpdateOrphanage"})
+public class UpdateOrphanage extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
@@ -36,7 +36,7 @@ public class EditOrphanage extends HttpServlet {
             
         request.setAttribute("images", images);
         request.setAttribute("orphanage", orphanage);
-        request.getRequestDispatcher("EditOrphanage.jsp").forward(request, response); 
+        request.getRequestDispatcher("UpdateOrphanage.jsp").forward(request, response); 
     }
     
     

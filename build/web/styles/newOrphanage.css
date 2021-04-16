@@ -95,7 +95,7 @@ and open the template in the editor.
 }
 
 .create-orphanage-form fieldset + fieldset {
-  margin-top: 80px;
+  margin-top: 40px;
 }
 
 .create-orphanage-form fieldset legend {
@@ -243,3 +243,6 @@ and open the template in the editor.
   background: #36CF82;
 }
 
+.error{
+    color: #ea3e3e !important;
+}
