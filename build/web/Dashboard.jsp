@@ -43,7 +43,7 @@
                     <h1>Orfanatos Cadastrados</h1>
                     <p>${orphanages.size()} Orfanatos</p>
                 </div>
-
+                
                 <div class="listing">
                     <c:forEach var="orphanage" items="${orphanages}">
                         <div class="orphanage-block">
@@ -65,10 +65,8 @@
                             </div>
                         </div> 
                     </c:forEach>
-
                 </div>
             </main>
         </div>
     </body>
-    
 </html>

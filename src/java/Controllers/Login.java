@@ -35,25 +35,16 @@ public class Login extends HttpServlet {
         String user = request.getParameter("user");
         String password = request.getParameter("password");
         
-        System.out.println(user);
-        System.out.println(password);
-
-        
         UserModel model = new UserModel();
         User loggedIn = model.login(user, password);
         
-        
         if(loggedIn == null){
             String error = URLEncoder.encode("Usuário ou senha inválida!", "ISO-8859-1");
-            response.sendRedirect("Login?erro=" + error);
-            
+            response.sendRedirect("Login?erro=" + error);   
         }else{
             HttpSession session = request.getSession(true);
             session.setAttribute("isLoggedIn", true);
             response.sendRedirect("Dashboard");
         }
-        
     }
-    
-
 }

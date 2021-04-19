@@ -26,21 +26,20 @@ and open the template in the editor.
 .content .go-back{
     height: 64px;
     width: 220px;
-    background: #e64f86;
+    
     border-radius: 20px;
     margin-top: 70px;
-  
+    margin-right: 20px;
+    
+    background: #e64f86;
     color: white;  
     
     display: inline-block;
     text-align: center;
     line-height: 60px;
-    
-    margin-right: 20px;
+ 
     transition: background-color 0.2s;
 }
-
-
 
 .content .go-back:hover{
     background: #D6487B;

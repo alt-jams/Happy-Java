@@ -6,7 +6,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .content-wrapper {
@@ -53,7 +52,6 @@
     flex-direction: column;
 
     text-align: left;
-  
 }
 
 .location strong{
@@ -90,8 +88,6 @@
     position: absolute;
     right: 0;
     top: 1%; 
-
-    
     height: 54px;
     width: 222px;
 
@@ -100,13 +96,12 @@
 
     color:#ffffff;
     background: #12D4E0;
-    transition: background-color 0.2s;
-    cursor: pointer;
 
     font-weight: 700;
     font-size: 20px;
     
-    outline: none;
+    transition: background-color 0.2s;
+    cursor: pointer;
 }
 
 .login-button:hover{

@@ -37,8 +37,7 @@ public class UpdateOrphanage extends HttpServlet {
         request.setAttribute("images", images);
         request.setAttribute("orphanage", orphanage);
         request.getRequestDispatcher("UpdateOrphanage.jsp").forward(request, response); 
-    }
-    
+    } 
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
@@ -56,13 +55,11 @@ public class UpdateOrphanage extends HttpServlet {
         o.setAbout(request.getParameter("about"));
         o.setInstructions(request.getParameter("instructions"));
         o.setOpeningHours(request.getParameter("opening_hours"));
-
-        boolean openOnWeekends;
         
         if (request.getParameter("open_on_weekends").equals("yes")){
             o.setOpenOnWeekends(true);
         }else{
-            o.setOpenOnWeekends(true);
+            o.setOpenOnWeekends(false);
         }
         
         model.UpdateOrphanage(o);

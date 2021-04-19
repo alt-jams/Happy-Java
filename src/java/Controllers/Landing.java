@@ -29,5 +29,4 @@ public class Landing extends HttpServlet {
         
         factory.close();
     }
-
 }

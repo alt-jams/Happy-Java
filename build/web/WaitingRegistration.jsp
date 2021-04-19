@@ -43,6 +43,12 @@
                     <h1>Cadastros Pendentes</h1>
                     <p>${orphanages.size()} Orfanatos</p>
                 </div>
+                
+                    <c:if test="${orphanages.size() == 0}">
+                        <div class="no-orphanages">
+                            <img src="images/none.svg" alt="Happy" />
+                        </div>
+                    </c:if>
 
                 <div class="listing">
                     <c:forEach var="orphanage" items="${orphanages}">

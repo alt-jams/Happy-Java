@@ -42,15 +42,13 @@ and open the template in the editor.
     background: #12AFCB;
     border-radius: 16px;
     color: #ffffff;
-  
-    cursor: pointer;
-  
-    transition: background-color 0.2s;
-    outline: none;
-  
+    
     display: flex;
     justify-content: center;
     align-items: center;
+  
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 .sidebar footer button:hover {
@@ -124,10 +122,9 @@ and open the template in the editor.
     border-radius: 14px;
 
     background: #EBF2F5;
-    transition: background-color 0.2s;
     
+    transition: background-color 0.2s;
     cursor: pointer;
-    outline: none;
 }
 
 .edit-button1{
@@ -143,7 +140,6 @@ and open the template in the editor.
 }
 
 .map img{
-   
     border-radius: 20px;
 }
 

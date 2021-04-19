@@ -22,7 +22,7 @@
                 <main>
                     <h1>Excluir!</h1>
                     <p>
-                        Essa ação exclue o orfanato ${orphanage.name}. <br> Tem certeza que deseja continuar?
+                        Essa ação exclui o orfanato ${orphanage.name}. <br> Tem certeza que deseja continuar?
                     </p>
                 </main>
                 <div class="buttons">
@@ -32,8 +32,7 @@
                     <a href = "Dashboard" class="go-back">
                         <p>Voltar</p>
                     </a>
-                </div>
-                
+                </div>   
             </div>
         </div>
     </body>

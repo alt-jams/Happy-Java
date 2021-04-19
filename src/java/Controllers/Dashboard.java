@@ -30,8 +30,5 @@ public class Dashboard extends HttpServlet {
 
             request.setAttribute("orphanages", orphanages);
             request.getRequestDispatcher("Dashboard.jsp").forward(request, response);
-    }
-
-     
-    
+    }   
 }

@@ -47,6 +47,7 @@ function validateForm(){
     });
 }
 
+//Validação dos formulários de newOrphanage e UpdateOrphanage
 function validateOrphanageForm(){
     $.validator.setDefaults({
         ignore: [],
@@ -62,7 +63,6 @@ function validateOrphanageForm(){
             instructions: "required",
             opening_hours: "required",
             open_on_weekends: "required",
-
         },
 
         messages: {
@@ -127,12 +127,12 @@ function placeMarker(location) {
             marker = null;
 
         })
+        
     } else {
         marker.setMap(null);
         marker = null;
         placeMarker(location);
     }
-
 }
 
 function removeListener() {

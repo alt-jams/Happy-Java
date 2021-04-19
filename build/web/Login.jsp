@@ -51,7 +51,7 @@
                     </div>
 
                     <div class="input-block">
-                        <label for="password">senha</label>
+                        <label for="password">Senha</label>
                         <input id="password" name="password" type="password"/>
                     </div>
                 </fieldset>

@@ -38,20 +38,17 @@ and open the template in the editor.
     width: 48px;
     height: 48px;
   
-    border: 0;
-  
     background: #12AFCB;
+    border: 0;
     border-radius: 16px;
     color: #ffffff;
-  
-    cursor: pointer;
-  
-    transition: background-color 0.2s;
-    outline: none;
   
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 .sidebar footer button:hover {
@@ -72,9 +69,9 @@ and open the template in the editor.
 }
 
 #map{
-  margin-bottom:15px;
+  margin-bottom: 15px;
   border: 1px solid #D3E2E5;
-  border-radius:  20px;
+  border-radius: 20px;
 }
 
 .map-info{
@@ -232,7 +229,6 @@ and open the template in the editor.
   align-items: center;
 
   transition: background-color 0.2s;
-  outline: none;
 }
 
 .create-orphanage-form button.confirm-button svg {
@@ -241,8 +237,4 @@ and open the template in the editor.
 
 .create-orphanage-form button.confirm-button:hover {
   background: #36CF82;
-}
-
-.error{
-    color: #ea3e3e !important;
 }

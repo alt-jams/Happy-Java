@@ -25,7 +25,6 @@ public class RemoveOrphanage extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         
         OrphanageModel model = new OrphanageModel();
-        System.out.println(id);
         model.deleteOrphanage(id);
         
         response.sendRedirect("Dashboard");

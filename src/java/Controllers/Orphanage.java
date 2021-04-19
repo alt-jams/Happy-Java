@@ -42,7 +42,5 @@ public class Orphanage extends HttpServlet {
             request.setAttribute("orphanage", orphanage);
             request.getRequestDispatcher("Orphanage.jsp").forward(request, response);
         }
-        
-        
     }
 }

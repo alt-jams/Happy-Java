@@ -48,7 +48,6 @@ public class NewOrphanage extends HttpServlet {
         String about = request.getParameter("about");
         String instructions = request.getParameter("instructions");
         String openingHours = request.getParameter("opening_hours"); 
-        System.out.println(request.getParameter("open_on_weekends"));
         
         boolean openOnWeekends;
         

@@ -147,10 +147,8 @@
                     position: { lat: -24.1868833, lng: -53.0230323},
                     map,
                     title: "Hello World!",
-                    icon: icon
-                    
+                    icon: icon     
                 });
-
             }
 
             google.maps.event.addDomListener(window, 'load', initialize);

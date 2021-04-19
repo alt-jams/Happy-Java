@@ -38,8 +38,7 @@ public class ShowImages extends HttpServlet {
         byte[] imageData = loadImage(image.getPath());
         
         response.setContentType(image.getContentType());
-        response.getOutputStream().write(imageData);
-        
+        response.getOutputStream().write(imageData); 
     }
     
     private static byte[] loadImage(String name) throws FileNotFoundException, IOException {

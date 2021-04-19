@@ -75,7 +75,7 @@
                 };
                 
         // {orphanages.map(orphanage =>   
-                 <c:forEach var="orphanage" items="${orphanages}">
+                <c:forEach var="orphanage" items="${orphanages}">
                     const contentString${orphanage.id} = '<div class = "map-popup">' +
                                                 "<p>${orphanage.name}</p>" +
                                                 '<a href="Orphanage?id=${orphanage.id}">' +

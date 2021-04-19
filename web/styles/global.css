@@ -21,3 +21,7 @@ body, input, button, textarea{
 button{
     outline: none;
 }
+
+.error{
+    color: #ea3e3e !important;
+}

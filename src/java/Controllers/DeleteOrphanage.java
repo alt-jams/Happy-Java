@@ -29,6 +29,5 @@ public class DeleteOrphanage extends HttpServlet {
         
         request.setAttribute("orphanage", orphanage);
         request.getRequestDispatcher("DeleteOrphanage.jsp").forward(request, response);
-        
     }
 }

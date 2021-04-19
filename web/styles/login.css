@@ -59,9 +59,7 @@
 
     background: #EBF2F5;
     transition: background-color 0.2s;
-    
     cursor: pointer;
-    outline: none;
 }
 
 .arrow-left:hover{
@@ -149,10 +147,6 @@
 }
 .enter-button:hover{
     background:  #3EE08F;
-}
-
-.error{
-    color: #ea3e3e !important;
 }
 
 p{

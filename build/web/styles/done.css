@@ -16,7 +16,6 @@ and open the template in the editor.
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 
@@ -36,7 +35,6 @@ and open the template in the editor.
     
     background: url('../images/done.svg') no-repeat 85% center ;
     background-size: 35%;
-
 }
 
 #page-created-orphanage .content main {
@@ -48,6 +46,7 @@ and open the template in the editor.
     font-size: 76px;
     font-weight: 900;
     line-height: 70px;
+    
     text-align: center;
     position: relative;
     top: 50%;
@@ -69,7 +68,6 @@ and open the template in the editor.
     background: #31B272;
     border-radius: 20px;
     margin-top: 70px;
-
     
     display: flex;
     justify-content: center;

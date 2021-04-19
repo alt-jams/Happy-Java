@@ -63,11 +63,11 @@ and open the template in the editor.
     align-items: center;
     justify-content: center;
 
-    transition: background-color 0.2s;
-    cursor: pointer;
-
     color: #8D734B;
     font-size:28px;
+    
+    transition: background-color 0.2s;
+    cursor: pointer;
 }
 
 .back-button:hover{
@@ -140,8 +140,3 @@ and open the template in the editor.
 .create-orphanage:hover{
     background: #17d6eb;
 }
-
-
-
-
-
