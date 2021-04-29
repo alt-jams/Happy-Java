@@ -33,7 +33,9 @@
             </aside>
             
             <main>
+                
                 <form action="NewOrphanage" method="post" class="create-orphanage-form" enctype="multipart/form-data" id="orphanage-form">
+                    <div class="center">
                     <fieldset>
                         <legend>Dados</legend>
                         <input type="hidden" id="latitude" name="latitude" value="" />
@@ -98,7 +100,9 @@
                     <button class="confirm-button" type="submit">
                         Confirmar
                     </button>
+                    </div>
                 </form>
+                
             </main>
         </div>
         

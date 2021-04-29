@@ -125,7 +125,8 @@ function placeMarker(location) {
         marker.addListener('click', function () {
             this.setMap(null);
             marker = null;
-
+            document.getElementById("latitude").value = '';
+            document.getElementById("longitude").value = '';
         })
         
     } else {

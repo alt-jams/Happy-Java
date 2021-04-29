@@ -53,7 +53,7 @@ public class Acceptance extends HttpServlet {
         
         model.UpdateOrphanage(o);
         
-        request.getRequestDispatcher("Acceptance.jsp").forward(request, response);
+        request.getRequestDispatcher("WaitingRegistration.jsp").forward(request, response);
     }
 
 }

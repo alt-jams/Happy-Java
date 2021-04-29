@@ -12,8 +12,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="styles/global.css">
-        <link rel="stylesheet" type="text/css" href="styles/newOrphanage.css">
         <link rel="stylesheet" type="text/css" href="styles/acceptance.css">
+        <link rel="stylesheet" type="text/css" href="styles/newOrphanage.css">
+
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"> 
      
         <script language="JavaScript" src="scripts/biblio.js"></script>
@@ -33,6 +34,7 @@
             
             <main>
                 <form action="Acceptance" method="post" class="create-orphanage-form">
+                    <div class="center">
                     <fieldset disabled>
                         <legend>Dados</legend>
 
@@ -104,7 +106,8 @@
                             </div>
                         </div>
                     </fieldset>
-                    
+                    </div>
+                        
                     <div class="buttons-content">
                         <button class="deny" type="button" onclick="window.location.href='DeleteOrphanage?id=${orphanage.id}'" >
                             <i class="far fa-times-circle"></i> &#32; Recusar

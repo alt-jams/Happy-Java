@@ -36,6 +36,7 @@
             
             <main>
                 <form action="UpdateOrphanage" method="post" class="create-orphanage-form" id="orphanage-form">
+                    <div class="center"> 
                     <fieldset>
                         <legend>Editar dados</legend>
                         <input type="hidden" id="latitude" name="latitude" value="${orphanage.latitude}" />
@@ -105,6 +106,7 @@
                     <button class="confirm-button" type="submit" name="id" value="${orphanage.id}">
                         Editar
                     </button>
+                    </div>
                 </form>
             </main>
         </div>
@@ -139,14 +141,10 @@
                         position: google.maps.ControlPosition.RIGHT_TOP,
                     },
                 };
-                
+        
                 map = new google.maps.Map(document.getElementById('map'),
-                    mapOptions);
-                    
-                google.maps.event.addListener(map, 'click', function(event) {
-                    placeMarker(event.latLng);
-                });  
-                
+                            mapOptions);
+               
                 marker = new google.maps.Marker({
                         position: {lat: ${orphanage.latitude}, lng: ${orphanage.longitude}},
                         map: map,
@@ -154,6 +152,17 @@
                 });
                 
                 removeListener();
+                
+                marker.addListener('click', function () {
+                    this.setMap(null);
+                    marker = null;
+                    document.getElementById("latitude").value = '';
+                    document.getElementById("longitude").value = '';
+                })
+                
+                google.maps.event.addListener(map, 'click', function(event) {
+                    placeMarker(event.latLng);
+                }); 
             }
 
             google.maps.event.addDomListener(window, 'load', initialize);

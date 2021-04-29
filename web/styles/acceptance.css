@@ -18,10 +18,7 @@ and open the template in the editor.
     box-sizing: border-box;
     border-radius: 0px 0px 20px 20px;
     
-    position: absolute;
-    right: 262px;
-    
-    margin-top: 40px;
+    right: 262px;   
 }
 
 .buttons-content button{
