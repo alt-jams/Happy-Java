@@ -26,17 +26,23 @@ public class UpdateOrphanage extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-         int id = Integer.parseInt(request.getParameter("id"));
         
-        OrphanageModel model = new OrphanageModel();
-        Orphanage orphanage = model.getOrphanage(id);
+        try {
+            int id = Integer.parseInt(request.getParameter("id"));
         
-        ImageModel imageModel = new ImageModel();
-        List<Image> images = imageModel.getOrphanageImages(orphanage.getId());
+            OrphanageModel model = new OrphanageModel();
+            Orphanage orphanage = model.getOrphanage(id);
+
+            ImageModel imageModel = new ImageModel();
+            List<Image> images = imageModel.getOrphanageImages(orphanage.getId());
+
+            request.setAttribute("images", images);
+            request.setAttribute("orphanage", orphanage);
+            request.getRequestDispatcher("UpdateOrphanage.jsp").forward(request, response);
             
-        request.setAttribute("images", images);
-        request.setAttribute("orphanage", orphanage);
-        request.getRequestDispatcher("UpdateOrphanage.jsp").forward(request, response); 
+        } catch (NumberFormatException e) {
+            response.sendRedirect("Dashboard");
+        }    
     } 
     
     @Override

@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Jamilly
  */
-@WebFilter(urlPatterns = {"/Dashboard" , "/Acceptance", "/DeleteOrphanage", "/WaitingRegistration"})
+@WebFilter(urlPatterns = {"/Dashboard" , "/Acceptance", "/DeleteOrphanage", "/WaitingRegistration", "/RemoveOrphanage"})
 public class IsUserLoggedIn implements Filter{
 
     @Override

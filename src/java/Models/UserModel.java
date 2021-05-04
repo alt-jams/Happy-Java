@@ -17,10 +17,12 @@ public class UserModel {
     public User login(String email, String password){
         
         User user = null;
-
-        UserDAO dao = new UserDAO();
-        user = dao.login(email, password);
-            
+        
+        if (!email.equals("") && !password.equals("")){
+            UserDAO dao = new UserDAO();
+            user = dao.login(email, password);
+        }  
+        
         return user;
     }
 }

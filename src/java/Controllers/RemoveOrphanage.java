@@ -22,12 +22,18 @@ public class RemoveOrphanage extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        int id = Integer.parseInt(request.getParameter("id"));
         
-        OrphanageModel model = new OrphanageModel();
-        model.deleteOrphanage(id);
+        try {
+            int id = Integer.parseInt(request.getParameter("id"));
         
-        response.sendRedirect("Dashboard");
+            OrphanageModel model = new OrphanageModel();
+            model.deleteOrphanage(id);
+
+            response.sendRedirect("Dashboard");
+            
+        } catch (NumberFormatException e) {
+            response.sendRedirect("Dashboard");
+        }  
     }
 
 }
