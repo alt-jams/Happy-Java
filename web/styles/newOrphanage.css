@@ -143,6 +143,21 @@ and open the template in the editor.
   padding: 0 16px;
 }
 
+.create-orphanage-form #time-input {    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.create-orphanage-form #time-input input {
+    width: 250px;
+}
+
+.create-orphanage-form #time-input div:first-child{
+    margin-right: 40px;
+}
+
 .create-orphanage-form .input-block textarea {
   min-height: 120px;
   max-height: 240px;

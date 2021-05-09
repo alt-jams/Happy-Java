@@ -3,27 +3,36 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/Orphanage.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/web/styles/newOrphanage.css</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Filters/IsUserLoggedIn.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/Done.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/web/Login.jsp</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/WaitingRegistration.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/web/NewOrphanage.jsp</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/DAO/UserDAO.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Models/UserModel.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/web/UpdateOrphanage.jsp</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/RemoveOrphanage.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/Login.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/web/OrphanagesMap.jsp</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/Logout.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/Acceptance.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/DAO/ImageDAO.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Entities/User.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/DAO/GenericDAO.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/OrphanagesMap.java</file>
             <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/Dashboard.java</file>
             <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/Landing.java</file>
             <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/NewOrphanage.java</file>
             <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/web/Landing.jsp</file>
             <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/web/scripts/biblio.js</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/Orphanage.java</file>
             <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/DeleteOrphanage.java</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Filters/IsUserLoggedIn.java</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/Done.java</file>
             <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/UpdateOrphanage.java</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/WaitingRegistration.java</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/DAO/UserDAO.java</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Models/UserModel.java</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/RemoveOrphanage.java</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/Login.java</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/Logout.java</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/web/WaitingRegistration.jsp</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/web/Orphanage.jsp</file>
+            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Entities/Orphanage.java</file>
             <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Models/OrphanageModel.java</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/Acceptance.java</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/DAO/ImageDAO.java</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/DAO/GenericDAO.java</file>
-            <file>file:/C:/Users/jamil/Documents/GitHub/Happy-Java/src/java/Controllers/OrphanagesMap.java</file>
         </group>
     </open-files>
 </project-private>

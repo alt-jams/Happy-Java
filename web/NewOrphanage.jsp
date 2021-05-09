@@ -83,7 +83,17 @@
 
                         <div class="input-block">
                             <label>Horário de funcionamento</label>
-                            <input name="opening_hours" value=""/>
+                            <div id="time-input">
+                                <div>    
+                                    <label> Das </label>
+                                    <input type="time" name="opening_hours">
+                                </div>
+
+                                <div>
+                                    <label> Às </label>
+                                    <input type="time" name="closing_hours">
+                                </div>  
+                            </div>                             
                         </div>
 
                         <div class="input-block">

@@ -62,6 +62,7 @@ function validateOrphanageForm(){
             about: "required",
             instructions: "required",
             opening_hours: "required",
+            closing_hours: "required",
             open_on_weekends: "required",
         },
 
@@ -72,6 +73,7 @@ function validateOrphanageForm(){
             about: "Informe sobre o orfanato",
             instructions: "Digite as instruções de visita do orfanato",
             opening_hours: "Digite o horário de abertura do orfanato",
+            closing_hours: "Digite o horário de fechamento",
             open_on_weekends: "*obrigatório",
         },
 

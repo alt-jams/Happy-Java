@@ -16,9 +16,15 @@ import java.util.List;
 public class OrphanageModel {
     
     
-    public void insertOrphanage(Orphanage o){
-       OrphanageDAO dao = new OrphanageDAO();
-       dao.create(o);
+    public boolean insertOrphanage(Orphanage o){
+        if (o.getAbout().equals("") || o.getInstructions().equals("") || o.getLatitude().equals("")
+                || o.getLongitude().equals("") || o.getName().equals("") || o.getPhoneNumber().equals("")) {
+            return false;
+        } else {
+            OrphanageDAO dao = new OrphanageDAO();
+            dao.create(o);
+            return true;
+        } 
     }
     
     public Orphanage getOrphanage(int id){
@@ -38,9 +44,15 @@ public class OrphanageModel {
         return dao.getWaitingOrphanages();
     } 
     
-    public void UpdateOrphanage(Orphanage orphanage){
-        OrphanageDAO dao = new OrphanageDAO();
-        dao.update(orphanage);
+    public boolean UpdateOrphanage(Orphanage o){
+        if (o.getAbout().equals("") || o.getInstructions().equals("") || o.getLatitude().equals("")
+                || o.getLongitude().equals("") || o.getName().equals("") || o.getPhoneNumber().equals("")){
+            return false;
+        }else {
+            OrphanageDAO dao = new OrphanageDAO();
+            dao.update(o);
+            return true;
+        }
     }
     
     public void deleteOrphanage(int id){
